@@ -16,11 +16,11 @@ In order to fully use the app, you'll need to set up environment variables relat
 I didn't want to expose the credentials here for obvious security concerns. You may use your own credentials by setting the above as well as ```ENV['CSV_BOOK_UPLOADS_BUCKET']``` with the name of the bucket you wish to store your .csv files at.
 
 # Running the app
-Apply DB migrations:
+i. Apply DB migrations:
 ```
 bin/rails db:migrate
 ```
-Run the webserver:
+ii. Run the webserver:
 ```bin/dev``` or ```rails s```
 
 # Running tests
