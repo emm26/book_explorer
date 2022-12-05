@@ -6,7 +6,7 @@ https://user-images.githubusercontent.com/24696150/205674553-321962c9-a67b-41b7-
 
 
 # Dependencies
-Ruby v.3.1.2 and Rails 7.0.4 were used.
+Ruby v3.1.2 and Rails v7.0.4 were used.
 
 In order to fully use the app, you'll need to set up environment variables related to AWS S3 (used to store the uploaded .csv files.):
 - ```ENV['AWS_ACCESS_KEY_ID']```
