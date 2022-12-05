@@ -25,6 +25,7 @@ class Book < ApplicationRecord
       )
     end
 
+    books.clear if errors.any?
     [books, errors]
   end
 end
