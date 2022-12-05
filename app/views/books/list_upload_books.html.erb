@@ -1,0 +1,53 @@
+<h1 class="font-bold font-sans text-gray-900 pt-6 text-3xl md:text-3xl mb-4"><%= @books_upload.original_filename %></h1>
+<div class="text-sm text-gray-400">You uploaded this file on <%= @books_upload.created_at %></div>
+
+<div class="flex flex-col">
+  <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
+    <div class="py-2 inline-block min-w-full sm:px-6 lg:px-8">
+      <div class="overflow-hidden">
+        <table class="min-w-full">
+          <thead class="border-b">
+          <tr>
+            <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+              Title
+            </th>
+            <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+              Author
+            </th>
+            <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+              Date Published
+            </th>
+            <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+              Book Identifier (e.g. ISBN)
+            </th>
+            <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+              Publisher Name
+            </th>
+          </tr>
+          </thead>
+          <tbody>
+          <% @books.each do |book| %>
+            <tr class="border-b">
+              <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                <%= book.title %>
+              </td>
+              <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                <%= book.author %>
+              </td>
+              <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                <%= book.date_published %>
+              </td>
+              <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                <%= book.custom_id %>
+              </td>
+              <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                <%= book.publisher_name %>
+              </td>
+            </tr>
+          <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

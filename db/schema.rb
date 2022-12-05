@@ -10,10 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_12_02_171615) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_04_150703) do
   create_table "books", force: :cascade do |t|
+    t.text "title"
+    t.text "author"
+    t.text "custom_id"
+    t.datetime "date_published"
+    t.text "publisher_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "books_upload_id"
+    t.index ["books_upload_id"], name: "index_books_on_books_upload_id"
+  end
+
+  create_table "books_uploads", force: :cascade do |t|
+    t.text "original_filename"
+    t.text "unique_filename"
+    t.text "url"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_books_uploads_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -28,4 +45,5 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_02_171615) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "books_uploads", "users"
 end

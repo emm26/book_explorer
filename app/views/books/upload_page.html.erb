@@ -1,0 +1,105 @@
+<h1 class="font-bold font-sans text-gray-900 pt-6 pb-2 text-3xl md:text-3xl mb-4">Upload books</h1>
+
+<div class="mb-2 text-md text-gray-600">To get started, upload a <b>.csv file</b> containing the following columns:</div>
+<ul class="mb-4 mt-3 pl-8 text-sm list-disc">
+  <li>Title</li>
+  <li>Author</li>
+  <li>Date published</li>
+  <li>Unique identifier</li>
+  <li>Publisher name</li>
+</ul>
+
+<%= form_tag books_upload_csv_path, multipart: true do %>
+  <div class="flex">
+    <div>
+      <%= file_field_tag 'books_csv', required: true, accept: 'text/csv', class: 'text-sm ml-2' %>
+      <p class="ml-3 mt-1 text-sm text-gray-500 dark:text-gray-300" id="file_input_help">CSV file</p>
+    </div>
+    <%= submit_tag 'Upload', class: 'ml-4 max-h-9 cursor-pointer group relative flex justify-center rounded-md border border-transparent bg-indigo-600 px-4 text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2' %>
+  </div>
+<% end %>
+
+<div class="mb-2 mt-6 text-md text-gray-600">Here is a sample you can use as reference:</div>
+<div class="flex flex-col mb-4">
+  <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
+    <div class="py-2 inline-block min-w-full sm:px-6 lg:px-8">
+      <div class="overflow-hidden">
+        <table class="min-w-full">
+          <thead class="border-b">
+          <tr>
+            <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+              Title
+            </th>
+            <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+              Author
+            </th>
+            <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+              Date Published
+            </th>
+            <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+              Book Identifier (e.g. ISBN)
+            </th>
+            <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+              Publisher Name
+            </th>
+          </tr>
+          </thead>
+          <tbody>
+            <tr class="border-b">
+              <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                Design Patterns in Ruby
+              </td>
+              <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                Obie Fernandez
+              </td>
+              <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                4 December 2022
+              </td>
+              <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                978-0-321-49045-2
+              </td>
+              <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                Addison-Wesley
+              </td>
+            </tr>
+            <tr class="border-b">
+              <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                Sapiens: A Brief History of Humankind
+              </td>
+              <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                Yuhal Noah Harari
+              </td>
+              <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                30 April 2015
+              </td>
+              <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                923-0-234-29565-1
+              </td>
+              <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                Vintage
+              </td>
+            </tr>
+            <tr class="border-b">
+              <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                Don Quijote de la Mancha
+              </td>
+              <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                Miguel de Cervantes
+              </td>
+              <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                1 January 1605
+              </td>
+              <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                978-0-123-49246-1
+              </td>
+              <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                Planeta
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+<%= link_to 'Download sample.csv', 'https://csv-book-uploads.s3.eu-west-2.amazonaws.com/sample.csv', class: 'mt-6 cursor-pointer group relative flex justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2' %>

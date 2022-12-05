@@ -8,7 +8,7 @@
         <%= link_to "create an account", new_user_registration_path, class: "font-medium text-indigo-600 hover:text-indigo-500" %>
       </p>
     </div>
-    <%= form_for(:user, :url => session_path(:user)) do |f| %>
+    <%= form_for(:user, :url => session_path(:user), data: { turbo: false }) do |f| %>
       <div class="-space-y-px rounded-md shadow-sm">
         <%= f.text_field :email, autocomplete: 'email', placeholder: 'Email address', required: true, class: 'relative block w-full appearance-none rounded-none rounded-t-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm' %>
         <%= f.password_field :password, placeholder: 'Password', required: true, class: 'relative block w-full appearance-none rounded-none rounded-b-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm' %>
