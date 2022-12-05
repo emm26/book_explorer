@@ -2,6 +2,8 @@
 An app that allows for the upload of a .csv file containing information about books. The books are then displayed nicely in the UI.
 
 # Demo
+https://user-images.githubusercontent.com/24696150/205674553-321962c9-a67b-41b7-bde2-2eeb587a2243.mov
+
 
 # Dependencies
 Ruby v.3.1.2 and Rails 7.0.4 were used.
