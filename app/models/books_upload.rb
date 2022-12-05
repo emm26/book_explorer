@@ -1,6 +1,6 @@
 class BooksUpload < ApplicationRecord
   has_many :books
-  BOOK_UPLOADS_BUCKET = 'csv-book-uploads'.freeze
+  BOOK_UPLOADS_BUCKET = ENV['CSV_BOOK_UPLOADS_BUCKET']
 
   def self.new_from_file(file:, user_id:)
     book_upload = new(
