@@ -19,7 +19,9 @@ I didn't want to expose the credentials here for obvious security concerns. You 
 ```bin/dev``` or ```rails s```
 
 # Running tests
-
-# Future steps
+RSpec was used as testing framework. You can run tests by running the command:
+```
+rspec
+```
 
 
