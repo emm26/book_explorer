@@ -1,5 +1,5 @@
 # The Book Explorer
-An app that allows for the upload of a .csv file containing information about books. The books are then displayed nicely in the UI.
+An app that allows for the upload of a .csv file containing information about books. The list of books is then displayed nicely in the UI.
 
 # Demo
 https://user-images.githubusercontent.com/24696150/205674553-321962c9-a67b-41b7-bde2-2eeb587a2243.mov
